@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Key</title>
+  <style>
+    body { text-align: center; font-family: Arial; margin-top: 100px; }
+    .key-box { margin-top: 20px; font-size: 20px; color: green; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Get Key Page</h1>
+  <p>Click the button below to get your key.</p>
+  <button onclick="getKey()">Get Key</button>
+
+  <div class="key-box" id="keyBox"></div>
+
+  <script>
+    function getKey() {
+      // Redirect người dùng sang linkvertise hoặc chèn link ở đây
+      window.location.href = "https://yeumoney.com/spLpY_l";
+    }
+
+    // Khi người dùng quay lại (vd: từ linkvertise), hiện key
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const success = urlParams.get('success');
+
+      if (success === 'true') {
+        const key = 'BandiiosV2-' + Math.floor(Math.random() * 100000);
+        document.getElementById("keyBox").innerText = "Your Key: " + key;
+      }
+    }
+  </script>
+</body>
+</html>
